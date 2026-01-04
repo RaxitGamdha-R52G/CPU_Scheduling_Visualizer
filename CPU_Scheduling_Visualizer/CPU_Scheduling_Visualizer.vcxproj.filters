@@ -57,6 +57,12 @@
     <ClCompile Include="api\SchedulerAPI.cpp">
       <Filter>api</Filter>
     </ClCompile>
+    <ClCompile Include="core\ProcessManager\ProcessManager.cpp">
+      <Filter>core\ProcessManager</Filter>
+    </ClCompile>
+    <ClCompile Include="api\ProcessAPI.cpp">
+      <Filter>api</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core\ProcessManager\ProcessControlBlock.h">
@@ -66,6 +72,12 @@
       <Filter>core\SchedulerEngine</Filter>
     </ClInclude>
     <ClInclude Include="api\SchedulerAPI.h">
+      <Filter>api</Filter>
+    </ClInclude>
+    <ClInclude Include="core\ProcessManager\ProcessManager.h">
+      <Filter>core\ProcessManager</Filter>
+    </ClInclude>
+    <ClInclude Include="api\ProcessAPI.h">
       <Filter>api</Filter>
     </ClInclude>
   </ItemGroup>

@@ -127,13 +127,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="api\ProcessAPI.cpp" />
     <ClCompile Include="api\SchedulerAPI.cpp" />
+    <ClCompile Include="core\ProcessManager\ProcessManager.cpp" />
     <ClCompile Include="core\SchedulerEngine\SchedulerContext.cpp" />
     <ClCompile Include="CPU_Scheduling_Visualizer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="api\ProcessAPI.h" />
     <ClInclude Include="api\SchedulerAPI.h" />
     <ClInclude Include="core\ProcessManager\ProcessControlBlock.h" />
+    <ClInclude Include="core\ProcessManager\ProcessManager.h" />
     <ClInclude Include="core\SchedulerEngine\SchedulerContext.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
