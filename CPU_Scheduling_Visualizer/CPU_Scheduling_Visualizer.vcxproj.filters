@@ -52,6 +52,9 @@
     <Filter Include="core\SchedulerEngine\FCFS">
       <UniqueIdentifier>{50e89360-c48d-4389-adee-5f2927af6510}</UniqueIdentifier>
     </Filter>
+    <Filter Include="visualization\TableFormatter">
+      <UniqueIdentifier>{c1aedc28-a796-4bd8-8de8-e061c447342e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CPU_Scheduling_Visualizer.cpp">
@@ -80,6 +83,9 @@
     </ClCompile>
     <ClCompile Include="utils\TimeCalculator.cpp">
       <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="visualization\TableFormatter\TableFormatter.cpp">
+      <Filter>visualization\TableFormatter</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -112,6 +118,9 @@
     </ClInclude>
     <ClInclude Include="utils\TimeCalculator.h">
       <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="visualization\TableFormatter\TableFormatter.h">
+      <Filter>visualization\TableFormatter</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

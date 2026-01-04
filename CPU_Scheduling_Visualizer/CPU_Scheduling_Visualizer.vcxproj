@@ -136,6 +136,7 @@
     <ClCompile Include="core\TimelineManager\TimelineManager.cpp" />
     <ClCompile Include="CPU_Scheduling_Visualizer.cpp" />
     <ClCompile Include="utils\TimeCalculator.cpp" />
+    <ClCompile Include="visualization\TableFormatter\TableFormatter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="api\MetricsAPI.h" />
@@ -148,6 +149,7 @@
     <ClInclude Include="core\TimelineManager\TimelineEntry.h" />
     <ClInclude Include="core\TimelineManager\TimelineManager.h" />
     <ClInclude Include="utils\TimeCalculator.h" />
+    <ClInclude Include="visualization\TableFormatter\TableFormatter.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
