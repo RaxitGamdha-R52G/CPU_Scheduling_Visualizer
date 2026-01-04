@@ -129,6 +129,9 @@
   <ItemGroup>
     <ClCompile Include="CPU_Scheduling_Visualizer.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="core\ProcessManager\ProcessControlBlock.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

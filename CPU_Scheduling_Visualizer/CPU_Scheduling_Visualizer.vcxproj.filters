@@ -13,10 +13,45 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="api">
+      <UniqueIdentifier>{0d0fa0bd-5843-430e-b725-339601ca4407}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core">
+      <UniqueIdentifier>{cb5f8133-15bf-42ab-bf09-966366cb6c5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="visualization">
+      <UniqueIdentifier>{6ea8ced3-5a67-472f-a074-7c42a53c1134}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utils">
+      <UniqueIdentifier>{501a8b8e-4b2f-4bfb-a797-7645ebb808f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="examples">
+      <UniqueIdentifier>{97896af8-4095-492e-af0a-dd4d86575d03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tests">
+      <UniqueIdentifier>{9fea3fc2-13de-4174-8572-1b4d26bd0503}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="docs">
+      <UniqueIdentifier>{cddbbb17-5d1c-4bad-81a3-965cfb43d473}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="data">
+      <UniqueIdentifier>{d2169860-52ff-41c6-85cd-3d3f8fe9d868}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main">
+      <UniqueIdentifier>{8eb98910-ad8a-4d51-a98a-9a869d7ea96c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\ProcessManager">
+      <UniqueIdentifier>{976ecedb-a605-4602-b0b9-1a8dd30ed10b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CPU_Scheduling_Visualizer.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>main</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="core\ProcessManager\ProcessControlBlock.h">
+      <Filter>core\ProcessManager</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
