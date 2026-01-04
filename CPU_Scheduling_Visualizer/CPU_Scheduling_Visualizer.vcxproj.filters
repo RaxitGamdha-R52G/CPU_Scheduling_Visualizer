@@ -75,6 +75,12 @@
     <ClCompile Include="core\SchedulerEngine\FCFS\FCFSScheduler.cpp">
       <Filter>core\SchedulerEngine\FCFS</Filter>
     </ClCompile>
+    <ClCompile Include="api\MetricsAPI.cpp">
+      <Filter>api</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\TimeCalculator.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core\ProcessManager\ProcessControlBlock.h">
@@ -100,6 +106,12 @@
     </ClInclude>
     <ClInclude Include="core\SchedulerEngine\FCFS\FCFSScheduler.h">
       <Filter>core\SchedulerEngine\FCFS</Filter>
+    </ClInclude>
+    <ClInclude Include="api\MetricsAPI.h">
+      <Filter>api</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\TimeCalculator.h">
+      <Filter>utils</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

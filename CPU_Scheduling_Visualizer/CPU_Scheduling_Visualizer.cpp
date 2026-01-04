@@ -3,6 +3,7 @@
 #include "api/ProcessAPI.h"
 #include "core/TimelineManager/TimelineManager.h"
 #include "core/SchedulerEngine/FCFS/FCFSScheduler.h"
+#include "api/MetricsAPI.h"
 
 int main()
 {
@@ -21,5 +22,12 @@ int main()
 			<< std::endl;
 	}
 
+	std::cout << "Avg Waiting Time: " << MetricsAPI::averageWaitingTime() << "\n";
+
+	std::cout << "Avg Turnaround Time: " << MetricsAPI::averageTurnaroundTime() << "\n";
+
+	std::cout << "CPU Utilization: " << MetricsAPI::cpuUtilization() << "\n";
+
+	std::cout << "Throughput: " << MetricsAPI::throughput() << "\n";
 	return 0;
 }

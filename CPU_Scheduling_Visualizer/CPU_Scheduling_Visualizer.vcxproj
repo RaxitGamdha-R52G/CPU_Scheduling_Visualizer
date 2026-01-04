@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="api\MetricsAPI.cpp" />
     <ClCompile Include="api\ProcessAPI.cpp" />
     <ClCompile Include="api\SchedulerAPI.cpp" />
     <ClCompile Include="core\ProcessManager\ProcessManager.cpp" />
@@ -134,8 +135,10 @@
     <ClCompile Include="core\SchedulerEngine\SchedulerContext.cpp" />
     <ClCompile Include="core\TimelineManager\TimelineManager.cpp" />
     <ClCompile Include="CPU_Scheduling_Visualizer.cpp" />
+    <ClCompile Include="utils\TimeCalculator.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="api\MetricsAPI.h" />
     <ClInclude Include="api\ProcessAPI.h" />
     <ClInclude Include="api\SchedulerAPI.h" />
     <ClInclude Include="core\ProcessManager\ProcessControlBlock.h" />
@@ -144,6 +147,7 @@
     <ClInclude Include="core\SchedulerEngine\SchedulerContext.h" />
     <ClInclude Include="core\TimelineManager\TimelineEntry.h" />
     <ClInclude Include="core\TimelineManager\TimelineManager.h" />
+    <ClInclude Include="utils\TimeCalculator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
