@@ -131,6 +131,7 @@
     <ClCompile Include="api\SchedulerAPI.cpp" />
     <ClCompile Include="core\ProcessManager\ProcessManager.cpp" />
     <ClCompile Include="core\SchedulerEngine\SchedulerContext.cpp" />
+    <ClCompile Include="core\TimelineManager\TimelineManager.cpp" />
     <ClCompile Include="CPU_Scheduling_Visualizer.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -139,6 +140,8 @@
     <ClInclude Include="core\ProcessManager\ProcessControlBlock.h" />
     <ClInclude Include="core\ProcessManager\ProcessManager.h" />
     <ClInclude Include="core\SchedulerEngine\SchedulerContext.h" />
+    <ClInclude Include="core\TimelineManager\TimelineEntry.h" />
+    <ClInclude Include="core\TimelineManager\TimelineManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

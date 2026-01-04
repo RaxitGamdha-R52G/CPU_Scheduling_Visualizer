@@ -46,6 +46,9 @@
     <Filter Include="core\SchedulerEngine">
       <UniqueIdentifier>{41980a87-2b67-4b3d-8a69-7b999d366184}</UniqueIdentifier>
     </Filter>
+    <Filter Include="core\TimelineManager">
+      <UniqueIdentifier>{1d11459e-c0e1-4742-8145-3ea12acd9950}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CPU_Scheduling_Visualizer.cpp">
@@ -63,6 +66,9 @@
     <ClCompile Include="api\ProcessAPI.cpp">
       <Filter>api</Filter>
     </ClCompile>
+    <ClCompile Include="core\TimelineManager\TimelineManager.cpp">
+      <Filter>core\TimelineManager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core\ProcessManager\ProcessControlBlock.h">
@@ -79,6 +85,12 @@
     </ClInclude>
     <ClInclude Include="api\ProcessAPI.h">
       <Filter>api</Filter>
+    </ClInclude>
+    <ClInclude Include="core\TimelineManager\TimelineEntry.h">
+      <Filter>core\TimelineManager</Filter>
+    </ClInclude>
+    <ClInclude Include="core\TimelineManager\TimelineManager.h">
+      <Filter>core\TimelineManager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
