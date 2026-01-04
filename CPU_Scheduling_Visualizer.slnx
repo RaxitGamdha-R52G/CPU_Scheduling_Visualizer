@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="CPU_Scheduling_Visualizer/CPU_Scheduling_Visualizer.vcxproj" />
+</Solution>
