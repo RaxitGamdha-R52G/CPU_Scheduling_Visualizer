@@ -43,15 +43,30 @@
     <Filter Include="core\ProcessManager">
       <UniqueIdentifier>{976ecedb-a605-4602-b0b9-1a8dd30ed10b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="core\SchedulerEngine">
+      <UniqueIdentifier>{41980a87-2b67-4b3d-8a69-7b999d366184}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CPU_Scheduling_Visualizer.cpp">
       <Filter>main</Filter>
     </ClCompile>
+    <ClCompile Include="core\SchedulerEngine\SchedulerContext.cpp">
+      <Filter>core\SchedulerEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="api\SchedulerAPI.cpp">
+      <Filter>api</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core\ProcessManager\ProcessControlBlock.h">
       <Filter>core\ProcessManager</Filter>
+    </ClInclude>
+    <ClInclude Include="core\SchedulerEngine\SchedulerContext.h">
+      <Filter>core\SchedulerEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="api\SchedulerAPI.h">
+      <Filter>api</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

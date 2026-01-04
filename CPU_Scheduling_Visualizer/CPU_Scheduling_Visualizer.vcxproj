@@ -127,10 +127,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="api\SchedulerAPI.cpp" />
+    <ClCompile Include="core\SchedulerEngine\SchedulerContext.cpp" />
     <ClCompile Include="CPU_Scheduling_Visualizer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="api\SchedulerAPI.h" />
     <ClInclude Include="core\ProcessManager\ProcessControlBlock.h" />
+    <ClInclude Include="core\SchedulerEngine\SchedulerContext.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
