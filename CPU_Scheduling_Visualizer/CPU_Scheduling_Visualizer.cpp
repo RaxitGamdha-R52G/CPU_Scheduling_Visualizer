@@ -1,40 +1,68 @@
 #include <iostream>
+
 #include "api/SchedulerAPI.h"
 #include "api/ProcessAPI.h"
+
 #include "core/SchedulerEngine/FCFS/FCFSScheduler.h"
 #include "core/SchedulerEngine/SJF/SJFScheduler.h"
+#include "core/SchedulerEngine/Priority/PriorityScheduler.h"
+
 #include "visualization/TableFormatter/TableFormatter.h"
 #include "visualization/GanttChartASCII/GanttChartASCII.h"
 
 int main()
 {
-	// FCFS
-	SchedulerAPI::initialize();
+    // FCFS
+    std::cout << "\n=== FCFS Scheduling ===\n";
 
-	ProcessAPI::addProcess(0, 8);
-	ProcessAPI::addProcess(1, 4);
-	ProcessAPI::addProcess(2, 9);
-	ProcessAPI::addProcess(3, 5);
-	ProcessAPI::addProcess(6, 2);
+    SchedulerAPI::initialize();
 
-	FCFSScheduler::run();
+    ProcessAPI::addProcess(0, 8);
+    ProcessAPI::addProcess(1, 4);
+    ProcessAPI::addProcess(2, 9);
+    ProcessAPI::addProcess(3, 5);
+    ProcessAPI::addProcess(6, 2);
 
-	TableFormatter::printProcessTable();
-	GanttChartASCII::print();
+    FCFSScheduler::run();
 
-	// SJF non-preemptive
-	SchedulerAPI::initialize();
+    TableFormatter::printProcessTable();
+    GanttChartASCII::print();
 
-	ProcessAPI::addProcess(0, 8);
-	ProcessAPI::addProcess(1, 4);
-	ProcessAPI::addProcess(2, 9);
-	ProcessAPI::addProcess(3, 5);
-	ProcessAPI::addProcess(6, 2);
 
-	SJFScheduler::run();
+    // SJF (Non-Preemptive)
 
-	TableFormatter::printProcessTable();
-	GanttChartASCII::print();
+    std::cout << "\n=== SJF Scheduling (Non-Preemptive) ===\n";
 
-	return 0;
+    SchedulerAPI::initialize();
+
+    ProcessAPI::addProcess(0, 8);
+    ProcessAPI::addProcess(1, 4);
+    ProcessAPI::addProcess(2, 9);
+    ProcessAPI::addProcess(3, 5);
+    ProcessAPI::addProcess(6, 2);
+
+    SJFScheduler::run();
+
+    TableFormatter::printProcessTable();
+    GanttChartASCII::print();
+
+
+    // Priority Scheduling (Non-Preemptive)
+
+    std::cout << "\n=== Priority Scheduling (Non-Preemptive) ===\n";
+
+    SchedulerAPI::initialize();
+
+    ProcessAPI::addProcess(0, 8, 2);
+    ProcessAPI::addProcess(1, 4, 1);
+    ProcessAPI::addProcess(2, 9, 3);
+    ProcessAPI::addProcess(3, 5, 0);
+    ProcessAPI::addProcess(6, 2, 1);
+
+    PriorityScheduler::run();
+
+    TableFormatter::printProcessTable();
+    GanttChartASCII::print();
+
+    return 0;
 }

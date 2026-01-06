@@ -61,6 +61,9 @@
     <Filter Include="core\SchedulerEngine\SJF">
       <UniqueIdentifier>{f1d01d82-5a52-4345-a900-9c92dd85d7c6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="core\SchedulerEngine\Priority">
+      <UniqueIdentifier>{6587fba4-ffb8-4ef8-937c-79d36551e5c3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CPU_Scheduling_Visualizer.cpp">
@@ -98,6 +101,9 @@
     </ClCompile>
     <ClCompile Include="core\SchedulerEngine\SJF\SJFScheduler.cpp">
       <Filter>core\SchedulerEngine\SJF</Filter>
+    </ClCompile>
+    <ClCompile Include="core\SchedulerEngine\Priority\PriorityScheduler.cpp">
+      <Filter>core\SchedulerEngine\Priority</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -139,6 +145,9 @@
     </ClInclude>
     <ClInclude Include="core\SchedulerEngine\SJF\SJFScheduler.h">
       <Filter>core\SchedulerEngine\SJF</Filter>
+    </ClInclude>
+    <ClInclude Include="core\SchedulerEngine\Priority\PriorityScheduler.h">
+      <Filter>core\SchedulerEngine\Priority</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -132,6 +132,7 @@
     <ClCompile Include="api\SchedulerAPI.cpp" />
     <ClCompile Include="core\ProcessManager\ProcessManager.cpp" />
     <ClCompile Include="core\SchedulerEngine\FCFS\FCFSScheduler.cpp" />
+    <ClCompile Include="core\SchedulerEngine\Priority\PriorityScheduler.cpp" />
     <ClCompile Include="core\SchedulerEngine\SchedulerContext.cpp" />
     <ClCompile Include="core\SchedulerEngine\SJF\SJFScheduler.cpp" />
     <ClCompile Include="core\TimelineManager\TimelineManager.cpp" />
@@ -147,6 +148,7 @@
     <ClInclude Include="core\ProcessManager\ProcessControlBlock.h" />
     <ClInclude Include="core\ProcessManager\ProcessManager.h" />
     <ClInclude Include="core\SchedulerEngine\FCFS\FCFSScheduler.h" />
+    <ClInclude Include="core\SchedulerEngine\Priority\PriorityScheduler.h" />
     <ClInclude Include="core\SchedulerEngine\SchedulerContext.h" />
     <ClInclude Include="core\SchedulerEngine\SJF\SJFScheduler.h" />
     <ClInclude Include="core\TimelineManager\TimelineEntry.h" />
