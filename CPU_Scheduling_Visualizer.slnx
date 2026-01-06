@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="CPU_Scheduling_Visualizer/CPU_Scheduling_Visualizer.vcxproj" />
+  <Project Path="CPU_Scheduling_Visualizer/CPU_Scheduling_Visualizer.vcxproj" Id="bc1dc6a6-4eb9-40ae-9f50-aad00090ac93" />
 </Solution>

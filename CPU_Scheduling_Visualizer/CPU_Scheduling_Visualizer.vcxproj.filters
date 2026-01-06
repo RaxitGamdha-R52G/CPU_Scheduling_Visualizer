@@ -55,6 +55,9 @@
     <Filter Include="visualization\TableFormatter">
       <UniqueIdentifier>{c1aedc28-a796-4bd8-8de8-e061c447342e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="visualization\GanttChartASCII">
+      <UniqueIdentifier>{37ac4e6e-28b9-4c9a-b535-8ccfb6ee8782}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CPU_Scheduling_Visualizer.cpp">
@@ -86,6 +89,9 @@
     </ClCompile>
     <ClCompile Include="visualization\TableFormatter\TableFormatter.cpp">
       <Filter>visualization\TableFormatter</Filter>
+    </ClCompile>
+    <ClCompile Include="visualization\GanttChartASCII\GanttChartASCII.cpp">
+      <Filter>visualization\GanttChartASCII</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -121,6 +127,9 @@
     </ClInclude>
     <ClInclude Include="visualization\TableFormatter\TableFormatter.h">
       <Filter>visualization\TableFormatter</Filter>
+    </ClInclude>
+    <ClInclude Include="visualization\GanttChartASCII\GanttChartASCII.h">
+      <Filter>visualization\GanttChartASCII</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
