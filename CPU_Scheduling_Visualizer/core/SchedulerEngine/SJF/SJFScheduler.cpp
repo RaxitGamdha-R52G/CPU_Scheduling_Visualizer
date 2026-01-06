@@ -6,6 +6,7 @@
 
 #include <algorithm>
 #include <vector>
+#include <limits>
 
 void SJFScheduler::run() {
 	// Copy processes to avoid mutating the manager
