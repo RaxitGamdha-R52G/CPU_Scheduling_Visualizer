@@ -6,6 +6,7 @@
 #include "core/SchedulerEngine/FCFS/FCFSScheduler.h"
 #include "core/SchedulerEngine/SJF/SJFScheduler.h"
 #include "core/SchedulerEngine/Priority/PriorityScheduler.h"
+#include "core/SchedulerEngine/RoundRobin/RoundRobinScheduler.h"
 
 #include "visualization/TableFormatter/TableFormatter.h"
 #include "visualization/GanttChartASCII/GanttChartASCII.h"
@@ -60,6 +61,23 @@ int main()
     ProcessAPI::addProcess(6, 2, 1);
 
     PriorityScheduler::run();
+
+    TableFormatter::printProcessTable();
+    GanttChartASCII::print();
+
+    // Round Robin
+
+    std::cout << "\n=== Round Robin Scheduling ===\n";
+
+    SchedulerAPI::initialize();
+
+    ProcessAPI::addProcess(0, 8);
+    ProcessAPI::addProcess(1, 4);
+    ProcessAPI::addProcess(2, 9);
+    ProcessAPI::addProcess(3, 5);
+    ProcessAPI::addProcess(6, 2);
+
+    RoundRobinScheduler::run(3);
 
     TableFormatter::printProcessTable();
     GanttChartASCII::print();

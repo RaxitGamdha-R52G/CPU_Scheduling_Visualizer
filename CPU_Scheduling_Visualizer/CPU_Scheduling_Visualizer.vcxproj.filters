@@ -64,6 +64,9 @@
     <Filter Include="core\SchedulerEngine\Priority">
       <UniqueIdentifier>{6587fba4-ffb8-4ef8-937c-79d36551e5c3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="core\SchedulerEngine\RoundRobin">
+      <UniqueIdentifier>{4fd8d70f-aba3-4330-bdac-847e4e94c848}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CPU_Scheduling_Visualizer.cpp">
@@ -104,6 +107,9 @@
     </ClCompile>
     <ClCompile Include="core\SchedulerEngine\Priority\PriorityScheduler.cpp">
       <Filter>core\SchedulerEngine\Priority</Filter>
+    </ClCompile>
+    <ClCompile Include="core\SchedulerEngine\RoundRobin\RoundRobinScheduler.cpp">
+      <Filter>core\SchedulerEngine\RoundRobin</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +154,9 @@
     </ClInclude>
     <ClInclude Include="core\SchedulerEngine\Priority\PriorityScheduler.h">
       <Filter>core\SchedulerEngine\Priority</Filter>
+    </ClInclude>
+    <ClInclude Include="core\SchedulerEngine\RoundRobin\RoundRobinScheduler.h">
+      <Filter>core\SchedulerEngine\RoundRobin</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
