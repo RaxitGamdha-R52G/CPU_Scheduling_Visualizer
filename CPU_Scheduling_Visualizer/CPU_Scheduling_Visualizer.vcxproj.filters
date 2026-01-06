@@ -58,6 +58,9 @@
     <Filter Include="visualization\GanttChartASCII">
       <UniqueIdentifier>{37ac4e6e-28b9-4c9a-b535-8ccfb6ee8782}</UniqueIdentifier>
     </Filter>
+    <Filter Include="core\SchedulerEngine\SJF">
+      <UniqueIdentifier>{f1d01d82-5a52-4345-a900-9c92dd85d7c6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CPU_Scheduling_Visualizer.cpp">
@@ -92,6 +95,9 @@
     </ClCompile>
     <ClCompile Include="visualization\GanttChartASCII\GanttChartASCII.cpp">
       <Filter>visualization\GanttChartASCII</Filter>
+    </ClCompile>
+    <ClCompile Include="core\SchedulerEngine\SJF\SJFScheduler.cpp">
+      <Filter>core\SchedulerEngine\SJF</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -130,6 +136,9 @@
     </ClInclude>
     <ClInclude Include="visualization\GanttChartASCII\GanttChartASCII.h">
       <Filter>visualization\GanttChartASCII</Filter>
+    </ClInclude>
+    <ClInclude Include="core\SchedulerEngine\SJF\SJFScheduler.h">
+      <Filter>core\SchedulerEngine\SJF</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
