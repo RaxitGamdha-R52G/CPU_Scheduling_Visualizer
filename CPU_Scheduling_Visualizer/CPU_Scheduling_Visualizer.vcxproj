@@ -136,6 +136,7 @@
     <ClCompile Include="core\SchedulerEngine\RoundRobin\RoundRobinScheduler.cpp" />
     <ClCompile Include="core\SchedulerEngine\SchedulerContext.cpp" />
     <ClCompile Include="core\SchedulerEngine\SJF\SJFScheduler.cpp" />
+    <ClCompile Include="core\SchedulerEngine\SRTF\SRTFScheduler.cpp" />
     <ClCompile Include="core\TimelineManager\TimelineManager.cpp" />
     <ClCompile Include="CPU_Scheduling_Visualizer.cpp" />
     <ClCompile Include="utils\TimeCalculator.cpp" />
@@ -153,6 +154,7 @@
     <ClInclude Include="core\SchedulerEngine\RoundRobin\RoundRobinScheduler.h" />
     <ClInclude Include="core\SchedulerEngine\SchedulerContext.h" />
     <ClInclude Include="core\SchedulerEngine\SJF\SJFScheduler.h" />
+    <ClInclude Include="core\SchedulerEngine\SRTF\SRTFScheduler.h" />
     <ClInclude Include="core\TimelineManager\TimelineEntry.h" />
     <ClInclude Include="core\TimelineManager\TimelineManager.h" />
     <ClInclude Include="utils\TimeCalculator.h" />

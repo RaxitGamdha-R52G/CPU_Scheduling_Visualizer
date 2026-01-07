@@ -7,6 +7,7 @@
 #include "core/SchedulerEngine/SJF/SJFScheduler.h"
 #include "core/SchedulerEngine/Priority/PriorityScheduler.h"
 #include "core/SchedulerEngine/RoundRobin/RoundRobinScheduler.h"
+#include "core/SchedulerEngine/SRTF/SRTFScheduler.h"
 
 #include "visualization/TableFormatter/TableFormatter.h"
 #include "visualization/GanttChartASCII/GanttChartASCII.h"
@@ -78,6 +79,22 @@ int main()
     ProcessAPI::addProcess(6, 2);
 
     RoundRobinScheduler::run(3);
+
+    TableFormatter::printProcessTable();
+    GanttChartASCII::print();
+
+    // SRTF (SJF preemptive)
+    std::cout << "\n=== SRTF Scheduling ===\n";
+
+    SchedulerAPI::initialize();
+
+    ProcessAPI::addProcess(0, 8);
+    ProcessAPI::addProcess(1, 4);
+    ProcessAPI::addProcess(2, 9);
+    ProcessAPI::addProcess(3, 5);
+    ProcessAPI::addProcess(6, 2);
+
+    SRTFScheduler::run();
 
     TableFormatter::printProcessTable();
     GanttChartASCII::print();

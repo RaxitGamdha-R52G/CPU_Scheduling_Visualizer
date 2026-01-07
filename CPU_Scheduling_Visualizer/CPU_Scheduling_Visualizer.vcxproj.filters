@@ -111,6 +111,9 @@
     <ClCompile Include="core\SchedulerEngine\RoundRobin\RoundRobinScheduler.cpp">
       <Filter>core\SchedulerEngine\RoundRobin</Filter>
     </ClCompile>
+    <ClCompile Include="core\SchedulerEngine\SRTF\SRTFScheduler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core\ProcessManager\ProcessControlBlock.h">
@@ -157,6 +160,9 @@
     </ClInclude>
     <ClInclude Include="core\SchedulerEngine\RoundRobin\RoundRobinScheduler.h">
       <Filter>core\SchedulerEngine\RoundRobin</Filter>
+    </ClInclude>
+    <ClInclude Include="core\SchedulerEngine\SRTF\SRTFScheduler.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
