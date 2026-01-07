@@ -67,6 +67,12 @@
     <Filter Include="core\SchedulerEngine\RoundRobin">
       <UniqueIdentifier>{4fd8d70f-aba3-4330-bdac-847e4e94c848}</UniqueIdentifier>
     </Filter>
+    <Filter Include="core\SchedulerEngine\SRTF">
+      <UniqueIdentifier>{90b52683-6ac0-4ecc-8ce8-9fb6a3c9e1d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\SchedulerEngine\PriorityPreemptive">
+      <UniqueIdentifier>{6c0b9e1f-e38c-4f1e-a34e-6ce17d23493c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CPU_Scheduling_Visualizer.cpp">
@@ -112,7 +118,10 @@
       <Filter>core\SchedulerEngine\RoundRobin</Filter>
     </ClCompile>
     <ClCompile Include="core\SchedulerEngine\SRTF\SRTFScheduler.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>core\SchedulerEngine\SRTF</Filter>
+    </ClCompile>
+    <ClCompile Include="core\SchedulerEngine\PriorityPreemptive\PriorityPreemptiveScheduler.cpp">
+      <Filter>core\SchedulerEngine\PriorityPreemptive</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -162,7 +171,10 @@
       <Filter>core\SchedulerEngine\RoundRobin</Filter>
     </ClInclude>
     <ClInclude Include="core\SchedulerEngine\SRTF\SRTFScheduler.h">
-      <Filter>Header Files</Filter>
+      <Filter>core\SchedulerEngine\SRTF</Filter>
+    </ClInclude>
+    <ClInclude Include="core\SchedulerEngine\PriorityPreemptive\PriorityPreemptiveScheduler.h">
+      <Filter>core\SchedulerEngine\PriorityPreemptive</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

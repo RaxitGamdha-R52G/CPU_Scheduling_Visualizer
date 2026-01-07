@@ -8,6 +8,7 @@
 #include "core/SchedulerEngine/Priority/PriorityScheduler.h"
 #include "core/SchedulerEngine/RoundRobin/RoundRobinScheduler.h"
 #include "core/SchedulerEngine/SRTF/SRTFScheduler.h"
+#include "core/SchedulerEngine/PriorityPreemptive/PriorityPreemptiveScheduler.h"
 
 #include "visualization/TableFormatter/TableFormatter.h"
 #include "visualization/GanttChartASCII/GanttChartASCII.h"
@@ -95,6 +96,21 @@ int main()
     ProcessAPI::addProcess(6, 2);
 
     SRTFScheduler::run();
+
+    TableFormatter::printProcessTable();
+    GanttChartASCII::print();
+
+    // Preemptive Priority Scheduling
+    std::cout << "\n=== Preemptive Priority Scheduling ===\n";
+
+    SchedulerAPI::initialize();
+    ProcessAPI::addProcess(0, 8, 2);
+    ProcessAPI::addProcess(1, 4, 1);
+    ProcessAPI::addProcess(2, 9, 3);
+    ProcessAPI::addProcess(3, 5, 0);
+    ProcessAPI::addProcess(6, 2, 1);
+
+    PriorityPreemptiveScheduler::run();
 
     TableFormatter::printProcessTable();
     GanttChartASCII::print();

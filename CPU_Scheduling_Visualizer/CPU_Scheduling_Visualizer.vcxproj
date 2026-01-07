@@ -132,6 +132,7 @@
     <ClCompile Include="api\SchedulerAPI.cpp" />
     <ClCompile Include="core\ProcessManager\ProcessManager.cpp" />
     <ClCompile Include="core\SchedulerEngine\FCFS\FCFSScheduler.cpp" />
+    <ClCompile Include="core\SchedulerEngine\PriorityPreemptive\PriorityPreemptiveScheduler.cpp" />
     <ClCompile Include="core\SchedulerEngine\Priority\PriorityScheduler.cpp" />
     <ClCompile Include="core\SchedulerEngine\RoundRobin\RoundRobinScheduler.cpp" />
     <ClCompile Include="core\SchedulerEngine\SchedulerContext.cpp" />
@@ -150,6 +151,7 @@
     <ClInclude Include="core\ProcessManager\ProcessControlBlock.h" />
     <ClInclude Include="core\ProcessManager\ProcessManager.h" />
     <ClInclude Include="core\SchedulerEngine\FCFS\FCFSScheduler.h" />
+    <ClInclude Include="core\SchedulerEngine\PriorityPreemptive\PriorityPreemptiveScheduler.h" />
     <ClInclude Include="core\SchedulerEngine\Priority\PriorityScheduler.h" />
     <ClInclude Include="core\SchedulerEngine\RoundRobin\RoundRobinScheduler.h" />
     <ClInclude Include="core\SchedulerEngine\SchedulerContext.h" />
