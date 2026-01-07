@@ -100,17 +100,42 @@ int main()
     TableFormatter::printProcessTable();
     GanttChartASCII::print();
 
-    // Preemptive Priority Scheduling
-    std::cout << "\n=== Preemptive Priority Scheduling ===\n";
+    // Preemptive Priority Scheduling (NO Aging)
+    std::cout << "\n=== Preemptive Priority Scheduling (No Aging) ===\n";
 
     SchedulerAPI::initialize();
+
     ProcessAPI::addProcess(0, 8, 2);
     ProcessAPI::addProcess(1, 4, 1);
     ProcessAPI::addProcess(2, 9, 3);
     ProcessAPI::addProcess(3, 5, 0);
     ProcessAPI::addProcess(6, 2, 1);
 
-    PriorityPreemptiveScheduler::run();
+    PriorityPreemptiveOptions noAging;
+    noAging.enableAging = false;
+
+    PriorityPreemptiveScheduler::run(noAging);
+
+    TableFormatter::printProcessTable();
+    GanttChartASCII::print();
+
+    // Preemptive Priority Scheduling (WITH Aging)
+    std::cout << "\n=== Preemptive Priority Scheduling (With Aging) ===\n";
+
+    SchedulerAPI::initialize();
+
+    ProcessAPI::addProcess(0, 8, 2);
+    ProcessAPI::addProcess(1, 4, 1);
+    ProcessAPI::addProcess(2, 9, 3);
+    ProcessAPI::addProcess(3, 5, 0);
+    ProcessAPI::addProcess(6, 2, 1);
+
+    PriorityPreemptiveOptions withAging;
+    withAging.enableAging = true;
+    withAging.agingInterval = 5;
+    withAging.agingStep = 1;
+
+    PriorityPreemptiveScheduler::run(withAging);
 
     TableFormatter::printProcessTable();
     GanttChartASCII::print();

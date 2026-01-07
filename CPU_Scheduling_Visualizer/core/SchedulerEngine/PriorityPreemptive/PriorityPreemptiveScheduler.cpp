@@ -8,13 +8,19 @@
 #include <vector>
 #include <limits>
 
-void PriorityPreemptiveScheduler::run() {
+void PriorityPreemptiveScheduler::run(const PriorityPreemptiveOptions& options) {
     // Copy processes to avoid mutating the manager
     auto processes = ProcessManager::getAllProcesses();
     const int n = static_cast<int>(processes.size());
 
     for (auto& p : processes) {
         p.remainingTime = p.burstTime;
+    }
+
+    // Track last execution time (for aging)
+    std::vector<TimeUnit> lastExecutionTime(n);
+    for (int i = 0; i < n; ++i) {
+        lastExecutionTime[i] = processes[i].arrivalTime;
     }
 
     // Sort once by arrival time, then PID
@@ -31,7 +37,28 @@ void PriorityPreemptiveScheduler::run() {
         TimeUnit now = SchedulerContext::getCurrentTime();
         int chosen = -1;
 
-        // Helper Function: decide if process i is better than process j
+        // Apply aging if enabled
+        if (options.enableAging) {
+            for (int i = 0; i < n; ++i) {
+                if (processes[i].remainingTime > 0 &&
+                    processes[i].arrivalTime <= now &&
+                    lastExecutionTime[i] < now) {
+
+                    TimeUnit waited = now - lastExecutionTime[i];
+                    int boosts = waited / options.agingInterval;
+
+                    if (boosts > 0) {
+                        processes[i].priority = std::max(
+                            0,
+                            processes[i].priority - boosts * options.agingStep
+                        );
+                        lastExecutionTime[i] = now;
+                    }
+                }
+            }
+        }
+
+        // Helper: decide if process i is better than process j
         auto isBetter = [&](int i, int j) {
             if (j == -1) return true;
 
@@ -85,5 +112,8 @@ void PriorityPreemptiveScheduler::run() {
         if (processes[chosen].remainingTime == 0) {
             completed++;
         }
+
+        // Reset aging clock for running process
+        lastExecutionTime[chosen] = SchedulerContext::getCurrentTime();
     }
 }
