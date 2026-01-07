@@ -105,6 +105,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -129,7 +130,9 @@
   <ItemGroup>
     <ClCompile Include="api\MetricsAPI.cpp" />
     <ClCompile Include="api\ProcessAPI.cpp" />
+    <ClCompile Include="api\ResultFacade.cpp" />
     <ClCompile Include="api\SchedulerAPI.cpp" />
+    <ClCompile Include="api\SchedulerFacade.cpp" />
     <ClCompile Include="core\ProcessManager\ProcessManager.cpp" />
     <ClCompile Include="core\SchedulerEngine\FCFS\FCFSScheduler.cpp" />
     <ClCompile Include="core\SchedulerEngine\PriorityPreemptive\PriorityPreemptiveScheduler.cpp" />
@@ -145,6 +148,11 @@
     <ClCompile Include="visualization\TableFormatter\TableFormatter.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\include\cpu_scheduler\algorithm.h" />
+    <ClInclude Include="..\include\cpu_scheduler\options.h" />
+    <ClInclude Include="..\include\cpu_scheduler\process.h" />
+    <ClInclude Include="..\include\cpu_scheduler\result.h" />
+    <ClInclude Include="..\include\cpu_scheduler\scheduler.h" />
     <ClInclude Include="api\MetricsAPI.h" />
     <ClInclude Include="api\ProcessAPI.h" />
     <ClInclude Include="api\SchedulerAPI.h" />

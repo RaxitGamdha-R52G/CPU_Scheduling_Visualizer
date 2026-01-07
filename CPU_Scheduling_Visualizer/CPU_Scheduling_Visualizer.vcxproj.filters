@@ -73,6 +73,9 @@
     <Filter Include="core\SchedulerEngine\PriorityPreemptive">
       <UniqueIdentifier>{6c0b9e1f-e38c-4f1e-a34e-6ce17d23493c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Public API">
+      <UniqueIdentifier>{21bf74c3-40ca-4a1d-a417-872817033e78}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CPU_Scheduling_Visualizer.cpp">
@@ -122,6 +125,12 @@
     </ClCompile>
     <ClCompile Include="core\SchedulerEngine\PriorityPreemptive\PriorityPreemptiveScheduler.cpp">
       <Filter>core\SchedulerEngine\PriorityPreemptive</Filter>
+    </ClCompile>
+    <ClCompile Include="api\SchedulerFacade.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="api\ResultFacade.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -175,6 +184,21 @@
     </ClInclude>
     <ClInclude Include="core\SchedulerEngine\PriorityPreemptive\PriorityPreemptiveScheduler.h">
       <Filter>core\SchedulerEngine\PriorityPreemptive</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\cpu_scheduler\algorithm.h">
+      <Filter>Public API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\cpu_scheduler\options.h">
+      <Filter>Public API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\cpu_scheduler\process.h">
+      <Filter>Public API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\cpu_scheduler\result.h">
+      <Filter>Public API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\cpu_scheduler\scheduler.h">
+      <Filter>Public API</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
