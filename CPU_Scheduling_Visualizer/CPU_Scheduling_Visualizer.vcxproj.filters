@@ -76,6 +76,9 @@
     <Filter Include="Public API">
       <UniqueIdentifier>{21bf74c3-40ca-4a1d-a417-872817033e78}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Public API\converter">
+      <UniqueIdentifier>{a210c761-15e4-4c8a-bcd9-8409ffffb2b5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CPU_Scheduling_Visualizer.cpp">
@@ -126,14 +129,11 @@
     <ClCompile Include="core\SchedulerEngine\PriorityPreemptive\PriorityPreemptiveScheduler.cpp">
       <Filter>core\SchedulerEngine\PriorityPreemptive</Filter>
     </ClCompile>
-    <ClCompile Include="api\SchedulerFacade.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="api\ResultFacade.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Public API\converter</Filter>
     </ClCompile>
-    <ClCompile Include="..\examples\basic_example.cpp">
-      <Filter>examples</Filter>
+    <ClCompile Include="api\SchedulerFacade.cpp">
+      <Filter>Public API\converter</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

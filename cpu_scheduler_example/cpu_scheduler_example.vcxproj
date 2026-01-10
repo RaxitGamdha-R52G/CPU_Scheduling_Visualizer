@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{bc1dc6a6-4eb9-40ae-9f50-aad00090ac93}</ProjectGuid>
-    <RootNamespace>CPUSchedulingVisualizer</RootNamespace>
+    <ProjectGuid>{abc72a23-9be6-4fea-b1c5-2c2649131250}</ProjectGuid>
+    <RootNamespace>cpuschedulerexample</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -40,7 +40,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v145</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -105,11 +105,13 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>CPU_Scheduling_Visualizer.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -128,48 +130,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="api\MetricsAPI.cpp" />
-    <ClCompile Include="api\ProcessAPI.cpp" />
-    <ClCompile Include="api\ResultFacade.cpp" />
-    <ClCompile Include="api\SchedulerAPI.cpp" />
-    <ClCompile Include="api\SchedulerFacade.cpp" />
-    <ClCompile Include="core\ProcessManager\ProcessManager.cpp" />
-    <ClCompile Include="core\SchedulerEngine\FCFS\FCFSScheduler.cpp" />
-    <ClCompile Include="core\SchedulerEngine\PriorityPreemptive\PriorityPreemptiveScheduler.cpp" />
-    <ClCompile Include="core\SchedulerEngine\Priority\PriorityScheduler.cpp" />
-    <ClCompile Include="core\SchedulerEngine\RoundRobin\RoundRobinScheduler.cpp" />
-    <ClCompile Include="core\SchedulerEngine\SchedulerContext.cpp" />
-    <ClCompile Include="core\SchedulerEngine\SJF\SJFScheduler.cpp" />
-    <ClCompile Include="core\SchedulerEngine\SRTF\SRTFScheduler.cpp" />
-    <ClCompile Include="core\TimelineManager\TimelineManager.cpp" />
-    <ClCompile Include="CPU_Scheduling_Visualizer.cpp" />
-    <ClCompile Include="utils\TimeCalculator.cpp" />
-    <ClCompile Include="visualization\GanttChartASCII\GanttChartASCII.cpp" />
-    <ClCompile Include="visualization\TableFormatter\TableFormatter.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\include\cpu_scheduler\algorithm.h" />
-    <ClInclude Include="..\include\cpu_scheduler\options.h" />
-    <ClInclude Include="..\include\cpu_scheduler\process.h" />
-    <ClInclude Include="..\include\cpu_scheduler\result.h" />
-    <ClInclude Include="..\include\cpu_scheduler\scheduler.h" />
-    <ClInclude Include="api\MetricsAPI.h" />
-    <ClInclude Include="api\ProcessAPI.h" />
-    <ClInclude Include="api\SchedulerAPI.h" />
-    <ClInclude Include="core\ProcessManager\ProcessControlBlock.h" />
-    <ClInclude Include="core\ProcessManager\ProcessManager.h" />
-    <ClInclude Include="core\SchedulerEngine\FCFS\FCFSScheduler.h" />
-    <ClInclude Include="core\SchedulerEngine\PriorityPreemptive\PriorityPreemptiveScheduler.h" />
-    <ClInclude Include="core\SchedulerEngine\Priority\PriorityScheduler.h" />
-    <ClInclude Include="core\SchedulerEngine\RoundRobin\RoundRobinScheduler.h" />
-    <ClInclude Include="core\SchedulerEngine\SchedulerContext.h" />
-    <ClInclude Include="core\SchedulerEngine\SJF\SJFScheduler.h" />
-    <ClInclude Include="core\SchedulerEngine\SRTF\SRTFScheduler.h" />
-    <ClInclude Include="core\TimelineManager\TimelineEntry.h" />
-    <ClInclude Include="core\TimelineManager\TimelineManager.h" />
-    <ClInclude Include="utils\TimeCalculator.h" />
-    <ClInclude Include="visualization\GanttChartASCII\GanttChartASCII.h" />
-    <ClInclude Include="visualization\TableFormatter\TableFormatter.h" />
+    <ClCompile Include="..\examples\basic_example.cpp" />
+    <ClCompile Include="cpu_scheduler_example.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -3,5 +3,8 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
+  <Project Path="cpu_scheduler_example/cpu_scheduler_example.vcxproj" Id="abc72a23-9be6-4fea-b1c5-2c2649131250">
+    <BuildDependency Project="CPU_Scheduling_Visualizer/CPU_Scheduling_Visualizer.vcxproj" />
+  </Project>
   <Project Path="CPU_Scheduling_Visualizer/CPU_Scheduling_Visualizer.vcxproj" Id="bc1dc6a6-4eb9-40ae-9f50-aad00090ac93" />
 </Solution>
