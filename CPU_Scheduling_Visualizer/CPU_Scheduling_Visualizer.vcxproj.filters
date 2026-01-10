@@ -132,6 +132,9 @@
     <ClCompile Include="api\ResultFacade.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\examples\basic_example.cpp">
+      <Filter>examples</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core\ProcessManager\ProcessControlBlock.h">
