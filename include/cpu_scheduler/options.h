@@ -3,12 +3,17 @@
 namespace cpu {
 
 struct SchedulerOptions {
-    // Round Robin
+    // Time quantum for Round Robin scheduling.
+    // Ignored by other algorithms.
     int timeQuantum = 0;
 
-    // Priority scheduling
+    // Enable aging for priority-based scheduling.
     bool enableAging = false;
+
+    // Number of time units after which aging is applied.
     int agingInterval = 5;
+
+    // Priority improvement applied during aging.
     int agingStep = 1;
 };
 

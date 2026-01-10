@@ -5,8 +5,8 @@ namespace cpu {
 class Result {
 public:
     // Printing helpers (CLI)
-    void printProcessTable() const;
-    void printGanttChart() const;
+    void printProcessTable() const;     // Prints a formatted process table to stdout.
+    void printGanttChart() const;       // Prints an ASCII Gantt chart to stdout.
 
     // Aggregate metrics
     double averageWaitingTime() const;
@@ -15,11 +15,11 @@ public:
     double throughput() const;
 
 private:
-    // Implementation hidden (defined in cpp later)
+    // Result objects are owned and managed by Scheduler.
     struct Impl;
     Impl* impl = nullptr;
 
-    // Only Scheduler can create Result
+    // Only Scheduler can create Result.
     friend class Scheduler;
 };
 

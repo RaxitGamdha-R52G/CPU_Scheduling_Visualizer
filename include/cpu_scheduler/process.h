@@ -3,9 +3,9 @@
 namespace cpu {
 
 struct Process {
-    int arrivalTime;
-    int burstTime;
-    int priority = 0;
+    int arrivalTime;   // Time at which the process arrives
+    int burstTime;     // CPU burst duration
+    int priority = 0;  // Lower value = higher priority
 };
 
 } // namespace cpu
