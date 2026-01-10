@@ -1,144 +1,58 @@
 #include <iostream>
 
-#include "api/SchedulerAPI.h"
-#include "api/ProcessAPI.h"
+#include <cpu_scheduler/scheduler.h>
+#include <cpu_scheduler/process.h>
+#include <cpu_scheduler/algorithm.h>
+#include <cpu_scheduler/options.h>
 
-#include "core/SchedulerEngine/FCFS/FCFSScheduler.h"
-#include "core/SchedulerEngine/SJF/SJFScheduler.h"
-#include "core/SchedulerEngine/Priority/PriorityScheduler.h"
-#include "core/SchedulerEngine/RoundRobin/RoundRobinScheduler.h"
-#include "core/SchedulerEngine/SRTF/SRTFScheduler.h"
-#include "core/SchedulerEngine/PriorityPreemptive/PriorityPreemptiveScheduler.h"
+int main() {
+	using namespace cpu;
 
-#include "visualization/TableFormatter/TableFormatter.h"
-#include "visualization/GanttChartASCII/GanttChartASCII.h"
+	Scheduler scheduler;
 
-int main()
-{
-    // FCFS
-    std::cout << "\n=== FCFS Scheduling ===\n";
+	// Add process (arrival, burst, priority)
+	scheduler.addProcess({ 0, 8, 2 });
+	scheduler.addProcess({ 1, 4, 1 });
+	scheduler.addProcess({ 2, 9, 3 });
+	scheduler.addProcess({ 3, 5, 0 });
+	scheduler.addProcess({ 6, 2, 1 });
 
-    SchedulerAPI::initialize();
+	std::cout << "\n=== FCFS ===\n";
+	scheduler.run(Algorithm::FCFS);
+	scheduler.result().printProcessTable();
+	scheduler.result().printGanttChart();
 
-    ProcessAPI::addProcess(0, 8);
-    ProcessAPI::addProcess(1, 4);
-    ProcessAPI::addProcess(2, 9);
-    ProcessAPI::addProcess(3, 5);
-    ProcessAPI::addProcess(6, 2);
+    std::cout << "\n=== SJF ===\n";
+    scheduler.run(Algorithm::SJF);
+    scheduler.result().printProcessTable();
+    scheduler.result().printGanttChart();
 
-    FCFSScheduler::run();
+    std::cout << "\n=== SRTF ===\n";
+    scheduler.run(Algorithm::SRTF);
+    scheduler.result().printProcessTable();
+    scheduler.result().printGanttChart();
 
-    TableFormatter::printProcessTable();
-    GanttChartASCII::print();
+    std::cout << "\n=== Priority (Non-Preemptive) ===\n";
+    scheduler.run(Algorithm::Priority);
+    scheduler.result().printProcessTable();
+    scheduler.result().printGanttChart();
 
+    std::cout << "\n=== Priority (Preemptive + Aging) ===\n";
+    SchedulerOptions opt;
+    opt.enableAging = true;
+    opt.agingInterval = 2;
 
-    // SJF (Non-Preemptive)
+    scheduler.run(Algorithm::PriorityPreemptiveAging, opt);
+    scheduler.result().printProcessTable();
+    scheduler.result().printGanttChart();
 
-    std::cout << "\n=== SJF Scheduling (Non-Preemptive) ===\n";
+    std::cout << "\n=== Round Robin (q=3) ===\n";
+    SchedulerOptions rr;
+    rr.timeQuantum = 3;
 
-    SchedulerAPI::initialize();
-
-    ProcessAPI::addProcess(0, 8);
-    ProcessAPI::addProcess(1, 4);
-    ProcessAPI::addProcess(2, 9);
-    ProcessAPI::addProcess(3, 5);
-    ProcessAPI::addProcess(6, 2);
-
-    SJFScheduler::run();
-
-    TableFormatter::printProcessTable();
-    GanttChartASCII::print();
-
-
-    // Priority Scheduling (Non-Preemptive)
-
-    std::cout << "\n=== Priority Scheduling (Non-Preemptive) ===\n";
-
-    SchedulerAPI::initialize();
-
-    ProcessAPI::addProcess(0, 8, 2);
-    ProcessAPI::addProcess(1, 4, 1);
-    ProcessAPI::addProcess(2, 9, 3);
-    ProcessAPI::addProcess(3, 5, 0);
-    ProcessAPI::addProcess(6, 2, 1);
-
-    PriorityScheduler::run();
-
-    TableFormatter::printProcessTable();
-    GanttChartASCII::print();
-
-    // Round Robin
-
-    std::cout << "\n=== Round Robin Scheduling ===\n";
-
-    SchedulerAPI::initialize();
-
-    ProcessAPI::addProcess(0, 8);
-    ProcessAPI::addProcess(1, 4);
-    ProcessAPI::addProcess(2, 9);
-    ProcessAPI::addProcess(3, 5);
-    ProcessAPI::addProcess(6, 2);
-
-    RoundRobinScheduler::run(3);
-
-    TableFormatter::printProcessTable();
-    GanttChartASCII::print();
-
-    // SRTF (SJF preemptive)
-    std::cout << "\n=== SRTF Scheduling ===\n";
-
-    SchedulerAPI::initialize();
-
-    ProcessAPI::addProcess(0, 8);
-    ProcessAPI::addProcess(1, 4);
-    ProcessAPI::addProcess(2, 9);
-    ProcessAPI::addProcess(3, 5);
-    ProcessAPI::addProcess(6, 2);
-
-    SRTFScheduler::run();
-
-    TableFormatter::printProcessTable();
-    GanttChartASCII::print();
-
-    // Preemptive Priority Scheduling (NO Aging)
-    std::cout << "\n=== Preemptive Priority Scheduling (No Aging) ===\n";
-
-    SchedulerAPI::initialize();
-
-    ProcessAPI::addProcess(0, 8, 2);
-    ProcessAPI::addProcess(1, 4, 1);
-    ProcessAPI::addProcess(2, 9, 3);
-    ProcessAPI::addProcess(3, 5, 0);
-    ProcessAPI::addProcess(6, 2, 1);
-
-    PriorityPreemptiveOptions noAging;
-    noAging.enableAging = false;
-
-    PriorityPreemptiveScheduler::run(noAging);
-
-    TableFormatter::printProcessTable();
-    GanttChartASCII::print();
-
-    // Preemptive Priority Scheduling (WITH Aging)
-    std::cout << "\n=== Preemptive Priority Scheduling (With Aging) ===\n";
-
-    SchedulerAPI::initialize();
-
-    ProcessAPI::addProcess(0, 8, 2);
-    ProcessAPI::addProcess(1, 4, 1);
-    ProcessAPI::addProcess(2, 9, 3);
-    ProcessAPI::addProcess(3, 5, 0);
-    ProcessAPI::addProcess(6, 2, 1);
-
-    PriorityPreemptiveOptions withAging;
-    withAging.enableAging = true;
-    withAging.agingInterval = 5;
-    withAging.agingStep = 1;
-
-    PriorityPreemptiveScheduler::run(withAging);
-
-    TableFormatter::printProcessTable();
-    GanttChartASCII::print();
+    scheduler.run(Algorithm::RoundRobin, rr);
+    scheduler.result().printProcessTable();
+    scheduler.result().printGanttChart();
 
     return 0;
 }
