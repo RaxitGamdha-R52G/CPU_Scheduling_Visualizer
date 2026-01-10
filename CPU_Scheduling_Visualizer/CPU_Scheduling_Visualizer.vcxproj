@@ -142,7 +142,6 @@
     <ClCompile Include="core\SchedulerEngine\SJF\SJFScheduler.cpp" />
     <ClCompile Include="core\SchedulerEngine\SRTF\SRTFScheduler.cpp" />
     <ClCompile Include="core\TimelineManager\TimelineManager.cpp" />
-    <ClCompile Include="CPU_Scheduling_Visualizer.cpp" />
     <ClCompile Include="utils\TimeCalculator.cpp" />
     <ClCompile Include="visualization\GanttChartASCII\GanttChartASCII.cpp" />
     <ClCompile Include="visualization\TableFormatter\TableFormatter.cpp" />

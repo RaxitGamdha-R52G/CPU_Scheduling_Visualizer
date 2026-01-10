@@ -37,9 +37,6 @@
     <Filter Include="data">
       <UniqueIdentifier>{d2169860-52ff-41c6-85cd-3d3f8fe9d868}</UniqueIdentifier>
     </Filter>
-    <Filter Include="main">
-      <UniqueIdentifier>{8eb98910-ad8a-4d51-a98a-9a869d7ea96c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="core\ProcessManager">
       <UniqueIdentifier>{976ecedb-a605-4602-b0b9-1a8dd30ed10b}</UniqueIdentifier>
     </Filter>
@@ -76,14 +73,11 @@
     <Filter Include="Public API">
       <UniqueIdentifier>{21bf74c3-40ca-4a1d-a417-872817033e78}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Public API\converter">
-      <UniqueIdentifier>{a210c761-15e4-4c8a-bcd9-8409ffffb2b5}</UniqueIdentifier>
+    <Filter Include="api\facade">
+      <UniqueIdentifier>{86b95bea-2162-4c45-b279-c2fde3799585}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CPU_Scheduling_Visualizer.cpp">
-      <Filter>main</Filter>
-    </ClCompile>
     <ClCompile Include="core\SchedulerEngine\SchedulerContext.cpp">
       <Filter>core\SchedulerEngine</Filter>
     </ClCompile>
@@ -130,10 +124,10 @@
       <Filter>core\SchedulerEngine\PriorityPreemptive</Filter>
     </ClCompile>
     <ClCompile Include="api\ResultFacade.cpp">
-      <Filter>Public API\converter</Filter>
+      <Filter>api\facade</Filter>
     </ClCompile>
     <ClCompile Include="api\SchedulerFacade.cpp">
-      <Filter>Public API\converter</Filter>
+      <Filter>api\facade</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
